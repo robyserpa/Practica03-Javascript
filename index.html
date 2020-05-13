@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>JavaScript Tutorial</title>
+        <meta charset="utf-8"/>
+        <link type="text/css" rel="stylesheet" href="java.css" >
+        <script src="test.js"></script>
+    </head>
+
+    <body onload="init()" >
+        <h1>Universidad Politécnica Salesiana.</h1>
+        <aside  class="calculadora">
+            <table>
+                <tr>
+                  <td colspan="4"><span id="resultado"></span></td>
+                </tr>
+                <tr>
+                  <td><button id="siete">7</button></td>
+                  <td><button id="ocho">8</button></td>
+                  <td><button id="nueve">9</button></td>
+                  <td><button id="division">/</button></td>
+                </tr>
+                <tr>
+                  <td><button id="cuatro">4</button></td>
+                  <td><button id="cinco">5</button></td>
+                  <td><button id="seis">6</button></td>
+                  <td><button id="multiplicacion">*</button></td>
+                </tr>
+                <tr>
+                  <td><button id="uno">1</button></td>
+                  <td><button id="dos">2</button></td>
+                  <td><button id="tres">3</button></td>
+                  <td><button id="resta">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="reset">C</button></td>
+                    <td><button id="cero">0</button></td>
+                    <td><button id="igual">=</button></td>
+                    <td><button id="suma">+</button></td>
+                </tr>
+            </table>
+        </aside>
+
+        <aside class="formulario">
+            <form id="formulario01" method="POST" action="pagina.php" 
+                onsubmit="return validarCamposObligatorios()"> 
+                <span id="errorDatos" class="error"></span>  
+
+                <label for="cedula">Cedula (*)</label> 
+                <input type="text" id="cedula" name="cedula" value="" 
+                placeholder="Ingrese el número de cedula ..." 
+                onkeyup="return validarCedula(this)" /> 
+                <br>
+                <label for="nombres">Nombres (*)</label> 
+                <input type="text" id="nombres" name="nombres" value="" 
+                placeholder="Ingrese sus dos nombres ..." 
+                onkeyup="return validarLetras(this)"/> 
+                <br>
+                <label for="apellidos">Apelidos (*)</label> 
+                <input type="text" id="apellidos" name="apellidos" 
+                value="" placeholder="Ingrese sus dos apellidos ..."
+                onkeyup="return validarLetras(this)"/> 
+                <br>
+                <label for="direccion">Dirección (*)</label> 
+                <input type="text" id="direccion" name="direccion" 
+                value="" placeholder="Ingrese su dirección ..."
+                onkeyup="return validarDireccion(this)"/> 
+                <br>
+                <label for="telefono">Teléfono (*)</label> 
+                <input type="text" id="telefono" name="telefono" 
+                value="" placeholder="Ingrese su número telefónico ..." 
+                onkeyup="return validarTelefono(this)"/> 
+                <br>
+                <label for="fechaNacimiento">Fecha Nacimiento (*)</label> 
+                <input type="text" id="fechaNacimiento" 
+                name="fechaNacimiento" value="" placeholder="Ejemplo: 01/01/2000" 
+                onkeyup="return validarFecha(this)"/> 
+                <br>
+                <label for="correo">Correo electrónico (*)</label> 
+                <input type="email" id="correo" name="correo" value="" 
+                placeholder="Ingrese su correo electrónico ..." 
+                onkeyup="return validarCorreo(this)"/> 
+                <br>
+                <label for="correo">Contraseña (*)</label> 
+                <input type="password" id="contrasena" name="contrasena" 
+                value="" placeholder="Ingrese su contraseña ..." 
+                onkeyup="return validarPasword(this)"/> 
+                <br>
+                <input type="submit" id="crear" name="crear" value="Aceptar"/>                 
+                <input type="reset" id="cancelar" name="cancelar" value="Cancelar" />
+            </form>
+        </aside>
+
+        <aside class="galeria" >
+            <div id="imagen" >
+                <input type="image" name="imagen1" id="imagen1" alt="image"/>
+                <input type="image" name="imagen2" id="imagen2" alt="image"/>
+                <input type="image" name="imagen3" id="imagen3" alt="image" />
+                <input type="image" name="imagen4" id="imagen4" alt="image"/>
+                <input type="image" name="imagen5" id="imagen5" alt="image"/>
+            </div>
+            <div id="botones">
+                <input type="button" id="anterior" name="anterior" value="Anterior" 
+                onclick="return anteriorImagen(this)">
+
+                <input type="button" id="iniciar" name="iniciar" value="Iniciar" 
+                onclick="return iniciarImagenes()">
+
+                <input type="button" id="siguiente" name="siguiente" value="Siguiente" 
+                onclick="return siguienteImagen(this)">
+            </div>
+            
+        </aside>
+    </body>
+</html>
